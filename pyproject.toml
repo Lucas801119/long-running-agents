@@ -1,0 +1,17 @@
+[project]
+name = "long-running-agents"
+version = "0.1.0"
+description = "可配置的长时间运行 Agent 编排系统，基于 Anthropic 工程博客文章"
+requires-python = ">=3.10"
+dependencies = [
+    "claude-agent-sdk>=0.1.0",
+    "pydantic>=2.0",
+    "pyyaml>=6.0",
+    "rich>=13.0",
+]
+
+[project.optional-dependencies]
+playwright = ["playwright"]
+
+[project.scripts]
+agent-orchestrator = "src.main:cli_main"

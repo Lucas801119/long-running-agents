@@ -1,0 +1,32 @@
+# 示例项目规格：待办事项应用（简单示例）
+# 用法: python -m src.main run specs/example-todo-app.yaml
+
+name: todo-app
+description: |
+  一个简洁的待办事项管理应用。
+  支持添加、编辑、删除、标记完成等基本操作。
+  数据持久化到本地 JSON 文件。
+
+tech_stack:
+  - react
+  - typescript
+  - tailwind
+  - vite
+
+requirements:
+  - 显示待办事项列表
+  - 添加新的待办事项
+  - 标记待办事项为已完成/未完成
+  - 删除待办事项
+  - 编辑待办事项内容
+  - 按状态筛选（全部/已完成/未完成）
+  - 数据持久化到 localStorage
+  - 清爽的 UI 设计
+
+dev_server_command: "npm run dev"
+port: 5173
+
+extra_instructions: |
+  使用 Vite 脚手架创建项目。
+  不需要后端服务器，纯前端应用。
+  使用 React hooks 管理状态。

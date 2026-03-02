@@ -1,0 +1,42 @@
+# 示例项目规格：实时聊天应用
+# 用法: python -m src.main run specs/example-chat-app.yaml
+
+name: realtime-chat
+description: |
+  一个支持多房间和用户认证的实时聊天应用。
+  用户可以注册登录、创建/加入聊天室、实时收发消息。
+  消息持久化存储，支持历史查看。
+
+tech_stack:
+  - react
+  - typescript
+  - tailwind
+  - express
+  - socket.io
+  - sqlite
+  - vite
+
+requirements:
+  - 用户注册（邮箱、用户名、密码）和登录功能
+  - 用户密码使用 bcrypt 加密存储
+  - JWT token 认证，存储在 httpOnly cookie 中
+  - 创建新的聊天室（设置房间名称）
+  - 显示可用聊天室列表
+  - 加入已有聊天室
+  - 在聊天室内实时发送和接收消息（使用 Socket.IO）
+  - 消息持久化到 SQLite 数据库
+  - 进入聊天室时加载历史消息
+  - 显示聊天室内在线用户列表
+  - 用户上线/下线时实时更新在线状态
+  - 响应式 UI 布局，适配桌面和移动端
+  - 消息显示发送者名称和时间戳
+  - 退出登录功能
+
+dev_server_command: "npm run dev"
+port: 3000
+
+extra_instructions: |
+  使用 Vite 作为构建工具。
+  前后端在同一个项目中（monorepo 结构不需要）。
+  后端使用 Express + Socket.IO，前端使用 React。
+  SQLite 数据库文件存储在项目根目录的 data/ 文件夹中。
