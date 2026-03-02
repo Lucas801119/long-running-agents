@@ -494,6 +494,44 @@ python -m src.main resume /path/to/your-existing-project \
 
 ---
 
+## 运行位置与项目目录
+
+### 在编排器项目目录下运行（默认方式）
+
+编排器命令需要在源码所在目录执行：
+
+```bash
+cd "d:/Codes/long-running agents"
+
+# 输出到默认目录 ./output/<项目名>/
+python -m src.main run specs/my-project.yaml
+
+# 通过 --project-dir 指定任意输出位置
+python -m src.main run specs/my-project.yaml --project-dir D:/Projects/my-new-app
+```
+
+### 安装为全局命令（从任意位置运行）
+
+如果不想每次都 `cd` 到编排器目录，可以安装为全局命令：
+
+```bash
+cd "d:/Codes/long-running agents"
+pip install -e .
+```
+
+安装后即可在任何位置直接使用：
+
+```bash
+# 在任意目录下运行
+agent-orchestrator run D:/specs/my-project.yaml --project-dir D:/Projects/my-app
+agent-orchestrator status D:/Projects/my-app
+agent-orchestrator resume D:/Projects/my-app --spec D:/specs/my-project.yaml
+```
+
+> **注意**：规格文件路径和项目目录路径在全局模式下需要使用绝对路径。
+
+---
+
 ## 运行参数详解
 
 ### 三个命令
